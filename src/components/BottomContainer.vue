@@ -187,6 +187,7 @@ export default {
   height: 42px;
   background: url(../assets/image/力度滑动按钮.png);
   background-size: 100% 100%;
+  transition: top 1s;
   z-index: 2;
 }
 .power-block {
@@ -197,6 +198,7 @@ export default {
   margin: 0 calc((104px - 81px) / 2);
   background: url(../assets/image/力度滑块.png);
   background-size: 100% 100%;
+  transition: top 1s;
   z-index: 1;
 }
 .start-game-btn {
