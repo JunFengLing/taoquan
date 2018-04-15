@@ -52,7 +52,7 @@ export default {
 }
 .coin-amount {
   position: absolute;
-  left: 10px;
+  left: 15px;
   bottom: 5px;
   display: flex;
   justify-content: center;

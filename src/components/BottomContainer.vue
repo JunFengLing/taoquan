@@ -3,13 +3,13 @@
     <div class="direction">
       <div class="direction-bg"></div>
       <div class="direction-label"></div>
-      <div class="direction-pointer" v-bind:style="rotateStyle"></div>
+      <div class="direction-pointer" v-bind:style="directionStyle"></div>
     </div>
     <div class="start-game-btn" v-on:click="startGame()"></div>
     <div class="power">
       <div class="power-bg"></div>
-      <div class="power-label"></div>
-      <div class="power-block"></div>
+      <div class="power-label" v-bind:style="powerStyle"></div>
+      <div class="power-block" v-bind:style="powerStyle"></div>
     </div>
   </section>
 </template>
@@ -19,14 +19,22 @@ export default {
   name: 'container',
   data () {
     return {
-      rotateDegree: 0,
-      power: 0
+      currDegree: 0,
+      currPower: 0.5
     }
   },
   computed: {
-    rotateStyle () {
+    directionStyle () {
+      if ((this.currDegree > 0 && this.currDegree <= 90) || (this.currDegree < 0 && this.currDegree >= -90)) {
+        return {
+          transform: `rotate(${this.currDegree}deg)`
+        }
+      }
+      return {}
+    },
+    powerStyle () {
       return {
-        transform: `rotate(${this.rotateDegree}deg)`
+        top: (1 - this.currPower) * 100 + '%'
       }
     }
   },
@@ -48,18 +56,57 @@ export default {
 
       direction.addEventListener('touchend', event => {
         distanceX = endX - startX
+        console.log(`direction distanceX: ${distanceX}`)
+
         if (distanceX > 90) {
-          this.rotateDegree = 90
+          this.currDegree = 90
         } else if (distanceX < -90) {
-          this.rotateDegree = -90
+          this.currDegree = -90
         } else {
-          this.rotateDegree = distanceX
+          this.currDegree = distanceX
         }
+        console.log(`current degree: ${this.currDegree}`)
+      })
+    },
+    getPower () {
+      const power = document.querySelector('.power')
+      const maxPowerHeight = power.clientHeight
+      const minPowerHeight = document.querySelector('.power-label').clientHeight
+      let minPower = minPowerHeight / maxPowerHeight
+      let startY, endY, distanceY
+      let currentPower
+
+      console.log(`max power height: ${maxPowerHeight}`)
+      console.log(`min power height: ${minPowerHeight}`)
+
+      power.addEventListener('touchstart', event => {
+        startY = event.targetTouches[0].pageY
+      })
+
+      power.addEventListener('touchmove', event => {
+        endY = event.targetTouches[0].pageY
+      })
+
+      power.addEventListener('touchend', event => {
+        distanceY = endY - startY
+        console.log(`power distanceY: ${distanceY}`)
+
+        currentPower = this.currPower - distanceY / maxPowerHeight
+
+        if (currentPower > 1) {
+          this.currPower = 1
+        } else if (currentPower < minPower) {
+          this.currPower = minPower
+        } else {
+          this.currPower = currentPower
+        }
+        console.log(`current power: ${this.currPower}`)
       })
     }
   },
   mounted () {
     this.getDirection()
+    this.getPower()
   },
   components: {
 
@@ -121,6 +168,7 @@ export default {
   position: relative;
   width: 104px;
   height: 168px;
+  overflow: hidden;
 }
 .power-bg {
   position: absolute;
@@ -134,7 +182,6 @@ export default {
 }
 .power-label {
   position: absolute;
-  bottom: 0;
   right: 0;
   width: 104px;
   height: 42px;
@@ -144,7 +191,6 @@ export default {
 }
 .power-block {
   position: absolute;
-  bottom: 0;
   right: 0;
   width: 81px;
   height: 168px;
