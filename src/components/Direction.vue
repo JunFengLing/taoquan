@@ -41,10 +41,10 @@ export default {
         distanceX = endX - startX
         console.log(`direction distanceX: ${distanceX}`)
 
-        if (distanceX > 90) {
-          this.currDegree = 90
-        } else if (distanceX < -90) {
-          this.currDegree = -90
+        if (distanceX > 60) {
+          this.currDegree = 60
+        } else if (distanceX < -60) {
+          this.currDegree = -60
         } else {
           this.currDegree = distanceX
         }

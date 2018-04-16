@@ -2,16 +2,19 @@
   <div id="app">
     <top-container></top-container>
     <div class="bottom-wrapper">
-      <bottom-container></bottom-container>
+      <bottom-container v-bind:isgamestart="isGameStart"></bottom-container>
       <div class="bet-wrapper"><bet></bet></div>
       <div class="direction-wrapper"><direction></direction></div>
       <div class="power-wrapper"><power></power></div>
-      <div class="start-game-btn" v-on:click="startGame()"></div>
+      <div class="ring" v-show="!isGameStart"></div>
+      <div class="start-game-btn" v-show="!isGameStart" v-on:click="startGame()"></div>
     </div>
   </div>
 </template>
 
 <script>
+import eventBus from './eventBus.js'
+
 import TopContainer from './components/TopContainer'
 import BottomContainer from './components/BottomContainer'
 import Bet from './components/Bet'
@@ -21,13 +24,18 @@ import Power from './components/Power'
 export default {
   name: 'App',
   data () {
-    return {}
+    return {
+      isGameStart: false
+    }
   },
   computed: {
   },
   methods: {
     startGame () {
-      alert('start game')
+      console.log('start game')
+      this.isGameStart = true
+
+      eventBus.$emit('notifyGameStart')
     }
   },
   mounted () {
@@ -73,6 +81,16 @@ export default {
   bottom: 0;
   right: 2px;
 }
+.ring {
+  position: absolute;
+  width: 275px;
+  height: 189px;
+  top: calc(100% - 189px);
+  left: calc((100% - 275px) / 2);
+  background: url(./assets/image/圈.png);
+  background-size: 100% 100%;
+  z-index: 1;
+}
 .start-game-btn {
   position: absolute;
   bottom: 52px;
@@ -81,6 +99,6 @@ export default {
   height: 106px;
   background: url(./assets/image/开始游戏按钮.png);
   background-size: 100% 100%;
-  z-index: 1;
+  z-index: 2;
 }
 </style>
