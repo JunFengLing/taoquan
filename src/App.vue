@@ -29,7 +29,8 @@ export default {
 
 <style>
 #app {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   height: 1377px;
   text-align: center;
   font-size: 28px;
