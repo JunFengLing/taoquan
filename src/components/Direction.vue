@@ -1,9 +1,9 @@
 <template>
-  <div class="direction">
+  <section class="direction">
     <div class="direction-bg"></div>
     <div class="direction-label"></div>
     <div class="direction-pointer" v-bind:style="directionStyle"></div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -60,9 +60,7 @@ export default {
 
 <style scoped>
 .direction {
-  position: absolute;
-  bottom: 0;
-  left: 8px;
+  position: relative;
   width: 188px;
   height: 92px;
 }

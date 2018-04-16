@@ -1,9 +1,9 @@
 <template>
-  <div class="power">
+  <section class="power">
     <div class="power-bg"></div>
     <div class="power-label" v-bind:style="powerStyle"></div>
     <div class="power-block" v-bind:style="powerStyle"></div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -66,9 +66,7 @@ export default {
 
 <style scoped>
 .power {
-  position: absolute;
-  bottom: 0;
-  right: 2px;
+  position: relative;
   width: 104px;
   height: 168px;
   overflow: hidden;

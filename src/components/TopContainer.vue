@@ -54,6 +54,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: 6px;
+  margin-right: 20px;
 }
 .title {
   width: 368px;
