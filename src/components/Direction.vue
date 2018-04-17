@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import eventBus from '../eventBus.js'
+
 export default {
   name: 'direction',
   data () {
@@ -49,6 +51,9 @@ export default {
           this.currDegree = distanceX
         }
         console.log(`current degree: ${this.currDegree}`)
+        eventBus.$emit('notifyCurrDegree', {
+          currDegree: this.currDegree
+        })
       })
     }
   },

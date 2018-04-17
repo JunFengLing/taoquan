@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import eventBus from '../eventBus.js'
+
 export default {
   name: 'power',
   data () {
@@ -55,6 +57,9 @@ export default {
           this.currPower = currentPower
         }
         console.log(`current power: ${this.currPower}`)
+        eventBus.$emit('notifyCurrPower', {
+          currPower: this.currPower
+        })
       })
     }
   },

@@ -6,7 +6,7 @@
       <div class="bet-wrapper"><bet></bet></div>
       <div class="direction-wrapper"><direction></direction></div>
       <div class="power-wrapper"><power></power></div>
-      <div class="ring" v-show="!isGameStart"></div>
+      <div class="static-ring" v-show="!isGameStart"></div>
       <div class="start-game-btn" v-show="!isGameStart" v-on:click="startGame()"></div>
     </div>
   </div>
@@ -81,7 +81,7 @@ export default {
   bottom: 0;
   right: 2px;
 }
-.ring {
+.static-ring {
   position: absolute;
   width: 275px;
   height: 189px;

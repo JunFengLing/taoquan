@@ -78,7 +78,7 @@ export default {
   top: 0;
   background: url(../assets/image/元宝.png);
   background-size: 100% 100%;
-  z-index: 4;
+  z-index: 2;
 }
 .large-plate {
   width: 235px;

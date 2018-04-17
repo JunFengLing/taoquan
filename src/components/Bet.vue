@@ -5,9 +5,9 @@
       <div
         class="bet-btn"
         v-for="item in betList"
-        v-bind:key="item.id"
-        v-bind:style="betBtnStyle(item.width)"
-        v-on:click="bet(item.id)"
+        v-bind:key="item"
+        v-bind:class="`bet-btn-${item}`"
+        v-on:click="bet(item)"
       >
         <img v-bind:src="item.img"/>
       </div>
@@ -16,39 +16,16 @@
 </template>
 
 <script>
-import screenUtil from '../utils/screenUtil.js'
-
 export default {
   name: 'coin',
   data () {
     return {
-      betList: [
-        {
-          id: 10,
-          img: require('../assets/image/下注区_10铜板.png'),
-          width: 156
-        },
-        {
-          id: 20,
-          img: require('../assets/image/下注区_20铜板.png'),
-          width: 163
-        },
-        {
-          id: 50,
-          img: require('../assets/image/下注区_50铜板.png'),
-          width: 155
-        }
-      ]
+      betList: [10, 20, 50]
     }
   },
   computed: {
   },
   methods: {
-    betBtnStyle (width) {
-      return {
-        width: width * screenUtil.screenRatio + 'px'
-      }
-    },
     bet (amount) {
       alert(`bet ${amount}`)
     }
@@ -74,11 +51,22 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.bet-btn {
+.bet-btn-10 {
   height: 76px;
+  width: 156px;
+  background: url(../assets/image/下注区_10铜板.png);
+  background-size: 100% 100%;
 }
-.bet-btn img {
-  width: 100%;
-  height: 100%;
+.bet-btn-20 {
+  height: 76px;
+  width: 163px;
+  background: url(../assets/image/下注区_20铜板.png);
+  background-size: 100% 100%;
+}
+.bet-btn-50 {
+  height: 76px;
+  width: 155px;
+  background: url(../assets/image/下注区_50铜板.png);
+  background-size: 100% 100%;
 }
 </style>
