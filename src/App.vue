@@ -36,7 +36,20 @@ export default {
       this.isGameStart = true
 
       eventBus.$emit('notifyGameStart')
+    },
+    test () {
+      return fetch('https://www.baidu.com')
+        .then(res => res.text())
+        .then(body => {
+          console.log(body)
+        })
+        .catch(err => {
+          console.error(err)
+        })
     }
+  },
+  created () {
+    this.test()
   },
   mounted () {
   },
