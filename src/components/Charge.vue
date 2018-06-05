@@ -6,6 +6,7 @@
       <div class="charge-item-contianer">
         <charge-item
           v-for="(item, index) in chargeItemList"
+          v-bind:key="index"
           v-bind:chargeitemvalue="item"
           v-bind:chargeitemindex="index"
           v-bind:isfirsttimecharge="isFirstTimeCharge"
@@ -17,13 +18,15 @@
 </template>
 
 <script>
+import eventBus from '../eventBus.js'
+
 import ChargeItem from './ChargeItem'
 
 export default {
   name: 'charge',
   data () {
     return {
-      isShow: true,
+      isShow: false,
       isFirstTimeCharge: false,
       chargeItemList: [
         {
@@ -57,6 +60,11 @@ export default {
   },
   components: {
     'charge-item': ChargeItem
+  },
+  mounted () {
+    eventBus.$on('NotifyShowCharge', () => {
+      this.isShow = true
+    })
   }
 }
 </script>

@@ -10,6 +10,7 @@
       <div class="start-game-btn" v-show="!isGameStart" v-on:click="startGame()"></div>
     </div>
     <charge></charge>
+    <task></task>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import Bet from './components/Bet'
 import Direction from './components//Direction'
 import Power from './components/Power'
 import Charge from './components/Charge'
+import Task from './components/Task'
 
 export default {
   name: 'App',
@@ -61,7 +63,8 @@ export default {
     'bet': Bet,
     'direction': Direction,
     'power': Power,
-    'charge': Charge
+    'charge': Charge,
+    'task': Task
   }
 }
 </script>

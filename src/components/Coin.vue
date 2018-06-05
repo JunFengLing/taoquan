@@ -2,13 +2,21 @@
   <section class="coin">
     <div class="coin-icon"></div>
     <div class="coin-amount">
-      <div class="coin-number" v-for="(item, index) in coinNumberList" v-bind:key="index" v-bind:class="coinNumber(item)"></div>
+      <div
+        class="coin-number"
+        v-for="(item, index) in coinNumberList"
+        v-bind:key="index"
+        v-bind:class="coinNumber(item)"
+      >
+      </div>
     </div>
     <div class="add-coin" v-on:click="addCoin()"></div>
   </section>
 </template>
 
 <script>
+import eventBus from '../eventBus.js'
+
 export default {
   name: 'coin',
   data () {
@@ -18,12 +26,12 @@ export default {
   },
   computed: {
     coinNumberList () {
-      return this.coinAmount.toString().split('')
+      return `${this.coinAmount}`.split('')
     }
   },
   methods: {
     addCoin () {
-      this.coinAmount++
+      eventBus.$emit('NotifyShowCharge')
     },
     coinNumber (number) {
       return `coin-number-${number}`

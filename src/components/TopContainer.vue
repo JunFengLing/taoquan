@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import eventBus from '../eventBus.js'
+
 import Coin from './Coin'
 
 export default {
@@ -27,7 +29,7 @@ export default {
       alert('back')
     },
     history () {
-      alert('history')
+      eventBus.$emit('NotifyShowTask')
     },
     help () {
       alert('help')
