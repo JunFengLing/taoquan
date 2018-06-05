@@ -75,7 +75,7 @@ export default {
   left: 0;
   width: 188px;
   height: 92px;
-  background: url(../assets/image/方向转盘背景.png);
+  background: url(../assets/image/taoquan/方向转盘背景.png);
   background-size: 100% 100%;
 }
 .direction-label {
@@ -85,7 +85,7 @@ export default {
   width: 77px;
   height: 39px;
   margin: 0 calc((188px - 77px) / 2);
-  background: url(../assets/image/方向.png);
+  background: url(../assets/image/taoquan/方向.png);
   background-size: 100% 100%;
   z-index: 2;
 }
@@ -96,7 +96,7 @@ export default {
   width: 40px;
   height: 99px;
   margin: 0 calc((188px - 40px) / 2);
-  background: url(../assets/image/方向指针.png);
+  background: url(../assets/image/taoquan/方向指针.png);
   background-size: 100% 100%;
   z-index: 1;
   transform-origin: 50% 100%;

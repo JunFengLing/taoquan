@@ -44,7 +44,7 @@ export default {
   width: 537px;
   height: 60px;
   margin: 0 auto 14px;
-  background: url(../assets/image/请选择下注金额.png);
+  background: url(../assets/image/taoquan/请选择下注金额.png);
   background-size: 100% 100%;
 }
 .bet {
@@ -54,19 +54,19 @@ export default {
 .bet-btn-10 {
   height: 76px;
   width: 156px;
-  background: url(../assets/image/下注区_10铜板.png);
+  background: url(../assets/image/taoquan/下注区_10铜板.png);
   background-size: 100% 100%;
 }
 .bet-btn-20 {
   height: 76px;
   width: 163px;
-  background: url(../assets/image/下注区_20铜板.png);
+  background: url(../assets/image/taoquan/下注区_20铜板.png);
   background-size: 100% 100%;
 }
 .bet-btn-50 {
   height: 76px;
   width: 155px;
-  background: url(../assets/image/下注区_50铜板.png);
+  background: url(../assets/image/taoquan/下注区_50铜板.png);
   background-size: 100% 100%;
 }
 </style>

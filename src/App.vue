@@ -9,6 +9,7 @@
       <div class="static-ring" v-show="!isGameStart"></div>
       <div class="start-game-btn" v-show="!isGameStart" v-on:click="startGame()"></div>
     </div>
+    <charge></charge>
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import BottomContainer from './components/BottomContainer'
 import Bet from './components/Bet'
 import Direction from './components//Direction'
 import Power from './components/Power'
+import Charge from './components/Charge'
 
 export default {
   name: 'App',
@@ -58,7 +60,8 @@ export default {
     'bottom-container': BottomContainer,
     'bet': Bet,
     'direction': Direction,
-    'power': Power
+    'power': Power,
+    'charge': Charge
   }
 }
 </script>
@@ -72,7 +75,7 @@ export default {
   font-size: 28px;
   font-weight: bold;
   color: #ffffff;
-  background: url(./assets/image/背景.png) no-repeat;
+  background: url(./assets/image/taoquan/背景.png) no-repeat;
   background-size: 100% 100%;
 }
 .bottom-wrapper {
@@ -100,7 +103,7 @@ export default {
   height: 189px;
   top: calc(100% - 189px);
   left: calc((100% - 275px) / 2);
-  background: url(./assets/image/圈.png);
+  background: url(./assets/image/taoquan/圈.png);
   background-size: 100% 100%;
   z-index: 1;
 }
@@ -110,7 +113,7 @@ export default {
   left: calc((750px - 322px) / 2);
   width: 322px;
   height: 106px;
-  background: url(./assets/image/开始游戏按钮.png);
+  background: url(./assets/image/taoquan/开始游戏按钮.png);
   background-size: 100% 100%;
   z-index: 2;
 }

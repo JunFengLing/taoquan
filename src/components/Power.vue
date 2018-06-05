@@ -83,7 +83,7 @@ export default {
   width: 81px;
   height: 168px;
   margin: 0 calc((104px - 81px) / 2);
-  background: url(../assets/image/力度条背景.png);
+  background: url(../assets/image/taoquan/力度条背景.png);
   background-size: 100% 100%;
 }
 .power-label {
@@ -91,7 +91,7 @@ export default {
   right: 0;
   width: 104px;
   height: 42px;
-  background: url(../assets/image/力度滑动按钮.png);
+  background: url(../assets/image/taoquan/力度滑动按钮.png);
   background-size: 100% 100%;
   transition: top 1s;
   z-index: 2;
@@ -102,7 +102,7 @@ export default {
   width: 81px;
   height: 168px;
   margin: 0 calc((104px - 81px) / 2);
-  background: url(../assets/image/力度滑块.png);
+  background: url(../assets/image/taoquan/力度滑块.png);
   background-size: 100% 100%;
   transition: top 1s;
   z-index: 1;
