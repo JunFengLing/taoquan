@@ -63,27 +63,27 @@ export default {
   width: 368px;
   height: 91px;
   margin-right: calc((750px - 368px) / 2);
-  background: url(../assets/image/taoquan/标题.png);
+  background-image: url(../../static/image/标题.png);
   background-size: 100% 100%;
 }
 .back-btn {
   width: 71px;
   height: 71px;
   margin-left: 16px;
-  background-image: url(../assets/image/taoquan/返回按钮.png);
+  background-image: url(../../static/image/返回按钮.png);
   background-size: 100% 100%;
 }
 .history {
   width: 150px;
   height: 40px;
   margin-left: 190px;
-  background-image: url(../assets/image/taoquan/套圈记录.png);
+  background-image: url(../../static/image/套圈记录.png);
   background-size: 100% 100%;
 }
 .help-btn {
   width: 60px;
   height: 60px;
-  background-image: url(../assets/image/taoquan/帮助按钮.png);
+  background-image: url(../../static/image/帮助按钮.png);
   background-size: 100% 100%;
 }
 </style>

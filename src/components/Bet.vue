@@ -6,7 +6,7 @@
         class="bet-btn"
         v-for="item in betList"
         v-bind:key="item"
-        v-bind:class="`bet-btn-${item}`"
+        v-bind:style="betBtnImg(item)"
         v-on:click="bet(item)"
       >
         <img v-bind:src="item.img"/>
@@ -24,10 +24,17 @@ export default {
     }
   },
   computed: {
+
   },
   methods: {
-    bet (amount) {
-      alert(`bet ${amount}`)
+    betBtnImg (item) {
+      return {
+        'backgroundImage': `url(../../static/image/下注区_${item}铜板.png)`,
+        'backgroundSize': '100% 100%'
+      }
+    },
+    bet (item) {
+      alert(`bet ${item}`)
     }
   },
   mounted () {
@@ -44,29 +51,15 @@ export default {
   width: 537px;
   height: 60px;
   margin: 0 auto 14px;
-  background: url(../assets/image/taoquan/请选择下注金额.png);
+  background-image: url(../../static/image/请选择下注金额.png);
   background-size: 100% 100%;
 }
 .bet {
   display: flex;
   justify-content: space-between;
 }
-.bet-btn-10 {
+.bet-btn {
   height: 76px;
   width: 156px;
-  background: url(../assets/image/taoquan/下注区_10铜板.png);
-  background-size: 100% 100%;
-}
-.bet-btn-20 {
-  height: 76px;
-  width: 163px;
-  background: url(../assets/image/taoquan/下注区_20铜板.png);
-  background-size: 100% 100%;
-}
-.bet-btn-50 {
-  height: 76px;
-  width: 155px;
-  background: url(../assets/image/taoquan/下注区_50铜板.png);
-  background-size: 100% 100%;
 }
 </style>

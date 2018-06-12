@@ -69,14 +69,14 @@ export default {
 <style scoped>
 .plate {
   position: absolute;
-  background: url(../assets/image/taoquan/盘子.png);
+  background-image: url(../../static/image/盘子.png);
   background-size: 100% 100%;
   z-index: 2;
 }
 .gold {
   position: absolute;
   top: 0;
-  background: url(../assets/image/taoquan/元宝.png);
+  background-image: url(../../static/image/元宝.png);
   background-size: 100% 100%;
   z-index: 2;
 }

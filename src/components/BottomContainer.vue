@@ -138,7 +138,7 @@ export default {
   position: absolute;
   transition-property: width, height, top, left;
   transition-duration: 2s;
-  background: url(../assets/image/taoquan/套种圈.png);
+  background-image: url(../../static/image/套种圈.png);
   background-size: 100% 100%;
   z-index: 3;
 }
@@ -146,7 +146,7 @@ export default {
   position: absolute;
   transition-property: width, height, top, left;
   transition-duration: 2s;
-  background: url(../assets/image/taoquan/套种圈阴影.png);
+  background-image: url(../../static/image/套种圈阴影.png);
   background-size: 100% 100%;
   z-index: 1;
 }
